@@ -39,7 +39,7 @@
     "ms": "^2.0.0",
     "signale": "*",
     "simple-get": "^2.7.0",
-    "stylelint": "^9.2.0",
+    "stylelint": "^13.0.0",
     "time-stamp": "^2.0.0",
     "turndown": "^4.0.1"
   },
