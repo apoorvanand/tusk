@@ -24,7 +24,9 @@
     "test": "npm run test:js && npm run test:css",
     "test:css": "stylelint 'style/*.css'",
     "test:js": "xo",
-    "pack:macos": "electron-packager . --no-prune --overwrite --asar --out=dist --platform=darwin --arch=x64 --icon=static/Icon.icns && cd dist/Tusk-darwin-x64 && zip -ryXq9 ../tusk-macos-${npm_package_version}.zip Tusk.app && electron-installer-dmg ../Tusk-darwin-x64/Tusk.app Tusk --icon=../../static/Icon.icns && cp Tusk.dmg ../../dist/tusk-macos-${npm_package_version}.dmg"
+    "pack:macos": "electron-packager . --no-prune --overwrite --asar --out=dist --platform=darwin --arch=x64 --icon=static/Icon.icns && cd dist/Tusk-darwin-x64 && zip -ryXq9 ../tusk-macos-${npm_package_version}.zip Tusk.app && electron-installer-dmg ../Tusk-darwin-x64/Tusk.app Tusk --icon=../../static/Icon.icns && cp Tusk.dmg ../../dist/tusk-macos-${npm_package_version}.dmg",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "auto-launch": "^5.0.1",
@@ -41,7 +43,8 @@
     "simple-get": "^2.7.0",
     "stylelint": "^9.2.0",
     "time-stamp": "^2.0.0",
-    "turndown": "^4.0.1"
+    "turndown": "^4.0.1",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "electron": "1.8.4",
@@ -124,5 +127,6 @@
         "squirrel"
       ]
     }
-  }
+  },
+  "snyk": true
 }
